@@ -29,8 +29,9 @@
                         alert('You must give a name');
                         return;
                     }
-                    return $http.post('/api/customer/add', {name: scope.name, product: scope.product}).then(function(res){
-                        scope.onAdded()()
+                    var dataCustomer = {name: scope.name, product: scope.product};
+                    return $http.post('/api/customer/add', dataCustomer).then(function(res){
+                        scope.onAdded()(dataCustomer)
                     });
                 };
             }

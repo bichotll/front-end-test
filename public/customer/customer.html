@@ -3,9 +3,9 @@
     <span>{{ customer.product.name }}</span>
     <span>{{ customer.queuedTime }}</span>
 
-    <span ng-if="customer.status !== 'served'" >
+    <span ng-if="customer.status !== 'served' && customer.id" >
         <button ng-click="serve()">Serve</button>
         <!-- disabled as server does not allow to remove a served customer -->
-        <button ng-if="customer.status !== 'served'" ng-click="remove()">Remove</button>
+        <button ng-click="remove()">Remove</button>
     </span>
 </div>

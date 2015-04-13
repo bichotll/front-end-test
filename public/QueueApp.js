@@ -16,8 +16,12 @@
         _getCustomers();
         _getServedCustomers();
 
-        $scope.onCustomerAdded = function(){
-            _getCustomers();
+        //bonus manipulating it without been waiting for the server request
+        $scope.onCustomerAdded = function(customer){
+            $scope.customers.push(customer);
+            setTimeout(function(){
+                _getCustomers();
+            }.bind(this), 1000);
         };
 
         $scope.onCustomerRemoved = function(){
