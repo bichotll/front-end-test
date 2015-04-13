@@ -3,7 +3,7 @@
 (function () {
 
     angular.module('qudini.QueueApp', [])
-        .controller('QueueCtrl', QueueCtrl)
+        .controller('QueueCtrl', QueueCtrl);
 
     /**
      * Bonus points - manipulating the without waiting for the

@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-    angular.module('qudini.QueueApp', [])
-        .directive('customer', Customer)
+    angular.module('qudini.QueueApp')
+        .directive('customer', Customer);
 
     /**
      * The <customer> directive is responsible for:

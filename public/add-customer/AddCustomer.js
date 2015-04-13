@@ -2,7 +2,7 @@
 
 (function () {
     angular.module('qudini.QueueApp')
-        .directive('addCustomer', AddCustomer)
+        .directive('addCustomer', AddCustomer);
 
 
     function AddCustomer($http){
@@ -27,5 +27,5 @@
         }
     }
 
-})()
+})();
 
