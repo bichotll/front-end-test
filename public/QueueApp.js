@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
 
     angular.module('qudini.QueueApp', [])
@@ -16,16 +18,16 @@
 
         $scope.onCustomerAdded = function(){
             _getCustomers();
-        }
+        };
 
         $scope.onCustomerRemoved = function(){
             _getCustomers();
-        }
+        };
 
         $scope.onCustomerServed = function(){
             _getCustomers();
             _getServedCustomers()
-        }
+        };
 
         function _getServedCustomers(){
             return $http.get('/api/customers/served').then(function(res){
@@ -41,5 +43,5 @@
     }
 
 
-})()
+})();
 
