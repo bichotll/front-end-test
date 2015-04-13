@@ -31,6 +31,7 @@
 
         function _getServedCustomers(){
             return $http.get('/api/customers/served').then(function(res){
+                console.log('served customers',res);
                 $scope.customersServed = res.data;
             })
         }

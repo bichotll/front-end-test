@@ -10,34 +10,43 @@
      * - calculating queued time
      * - removing customer from the queue
      */
-    function Customer($http){
+    function Customer($http) {
 
-        return{
+        return {
             restrict: 'E',
-            scope:{
+            scope: {
                 customer: '=',
 
                 onRemoved: '&',
                 onServed: '&'
             },
             templateUrl: '/customer/customer.html',
-            link: function(scope){
+            link: function (scope) {
 
                 // calculate how long the customer has queued for
                 scope.queuedTime = new Date() - new Date(scope.customer.joinedTime);
 
-                scope.remove = function(){
+                scope.remove = function () {
                     $http({
                         method: 'DELETE',
                         url: '/api/customer/remove',
                         params: {id: scope.customer.id}
-                    }).then(function(res){
+                    }).then(function (res) {
                         scope.onRemoved()()
+                    })
+                };
+
+                scope.serve = function () {
+                    $http({
+                        method: 'POST',
+                        url: '/api/customer/serve',
+                        data: {id: scope.customer.id}
+                    }).then(function (res) {
+                        scope.onServed()()
                     })
                 };
             }
         }
     }
 
-})()
-
+})();

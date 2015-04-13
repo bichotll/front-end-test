@@ -2,5 +2,7 @@
     <span>{{ customer.name }}</span>
     <span>{{ customer.product.name }}</span>
     <span>{{ customer.queuedTime }}</span>
+
+    <button ng-if="customer.status !== 'served'" ng-click="serve()">Serve</button>
     <button ng-click="remove()">Remove</button>
 </div>

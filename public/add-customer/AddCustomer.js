@@ -21,8 +21,10 @@
                 ];
 
                 scope.addCustomer = function(){
-
-                }
+                    return $http.post('/api/customer/add', {name: scope.name, product: scope.product}).then(function(res){
+                        console.log('res add',res);
+                    });
+                };
             }
         }
     }
