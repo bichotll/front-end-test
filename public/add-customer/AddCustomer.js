@@ -21,8 +21,16 @@
                 ];
 
                 scope.addCustomer = function(){
+                    //this could be a modal or even better, a form validation
+                    if (!scope.product){
+                        alert('You must select a product');
+                        return;
+                    } else if (!scope.name){
+                        alert('You must give a name');
+                        return;
+                    }
                     return $http.post('/api/customer/add', {name: scope.name, product: scope.product}).then(function(res){
-                        console.log('res add',res);
+                        scope.onAdded()()
                     });
                 };
             }
