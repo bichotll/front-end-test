@@ -4,7 +4,7 @@
   "description": "## The Simple Queue App The structure of this application is based off directives acting as components handling their own data. The backend is a simple NodeJS server serving in memory JSON objects. All the dependencies are versioned for your convenience :).",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "protractor protractor.js",
     "start": "node server.js"
   },
   "repository": {
