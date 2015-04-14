@@ -1,7 +1,7 @@
 var http = require('http');
 var uuid =  require('node-uuid');
 var serveStatic = require('node-static');
-var fileServer = new serveStatic.Server('./public');
+var fileServer = new serveStatic.Server('./dist');
 var express = require('express')
 var bodyParser = require('body-parser')
 
@@ -71,7 +71,7 @@ app.use(function (req, res) {
     }).resume();
 })
 
-app.listen(1337)
+app.listen(1338)
 console.log('Server is running @ 127.0.0.1:1337...');
 console.log('Good luck!');
 

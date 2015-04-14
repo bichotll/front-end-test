@@ -1,3 +1,34 @@
+#So what have I done so far
+```
+- All missions + bonus.
+- qa. Because they are views I wanted to code e2e tests. Much nicer than karma ones and you will be sure that it does works at the end.
+I like this approach :p http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html
+- 5. I'd have used bootstrap. Just wanted to have fun and showed you I have applied sass.
+```
+
+btw, the module initialization on Customer's file was just mad...
+
+##What I would do more
+
+I would use a yeoman boilerplate like this one: https://github.com/Swiip/generator-gulp-angular which is awesome and gives you everything you need so far.
+
+I would also use flux as a pattern. This can also been applied for Angular as far as I've seen.
+No more events between two components (Controller<->Directive<->Directive or Controller<->Controller).
+
+It saves you time and headaches when your code is complex or so many components depend of the same data. 
+
+##Let me run it
+
+Sure, you can run it using server.js. If you want to run the build then you'd have to change the param in the server for dist path instead of public (if you don't want access rights problems with the browser).
+
+###How I create the dist
+
+```
+gulp dist
+```
+
+- - -
+
 # Qudini Code Test
 
 ## The Simple Queue App
